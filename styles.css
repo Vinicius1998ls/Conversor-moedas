@@ -1,0 +1,60 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #d3d0cb;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+    font-family: 'Noto Sans SC', sans-serif;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 30px auto 0 auto;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+input {
+    display: flex;
+    width: 200px;
+    height: 30px;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+select {
+    display: flex;
+    width: 150px;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+button {
+    width: 100px;
+    height: 30px;
+    margin: 30px auto 0 auto;
+    margin-bottom: 10px;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-weight: 700;
+    font-size: 1rem; 
+    background-color: #7AF500;
+    border: 2px solid #000000;   
+}
