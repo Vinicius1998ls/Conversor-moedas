@@ -16,6 +16,67 @@ document.addEventListener('DOMContentLoaded', () => {
             maximumFractionDigits: 2
         })
     })
+
+    inputValue1.addEventListener('input', () => {
+        // pega o valor que está dentro do input
+    let value1 = document.getElementById('value1').value
+    // remove os pontos
+    value1 = value1.replace('.', '')
+    // troca virgula por ponto
+    value1 = value1.replace(',', '.')
+    //converte de string para numero
+    value1 = Number(value1)
+
+    // seleciona o segundo input
+    let inputValue2 = document.getElementById('value2')
+    let value2 = inputValue2.value
+    // seleciona as moedas escolhidas
+    let currency1 = document.getElementById('currency1').value
+    let currency2 = document.getElementById('currency2').value
+
+    if (currency1 == 'Real' && currency2 == 'Dolar') {
+        value2 = value1 / 5.24
+
+    } else if (currency1 == 'Dolar' && currency2 == 'Real') {
+        value2 = value1 * 5.24
+
+    } else if (currency1 == 'Real' && currency2 == 'Euro') {
+        value2 = value1 / 5.74
+
+    } else if (currency1 == 'Euro' && currency2 == 'Real') {
+        value2 = value1 * 5.74
+
+    } else if (currency1 == 'Real' && currency2 == 'BTC') {
+        value2 = value1 / 149905.69
+
+    } else if (currency1 == 'BTC' && currency2 == 'Real') {
+        value2 = value1 * 149905.69
+
+    } else if (currency1 == 'Euro' && currency2 == 'Dolar') {
+        value2 = value1 * 1.08
+
+    } else if (currency1 == 'Dolar' && currency2 == 'Euro') {
+        value2 = value1 / 1.08
+
+    } else if (currency1 == 'Dolar' && currency2 == 'BTC') {
+        value2 = value1 / 28436,50
+
+    } else if (currency1 == 'BTC' && currency2 == 'Dolar') {
+        value2 = value1 * 28436,50
+
+    } else if (currency1 == 'Euro' && currency2 == 'BTC') {
+        value2 = value1 / 26213,70
+
+    } else if (currency1 == 'BTC' && currency2 == 'Euro') {
+        value2 = value1 * 26213,70
+    }
+
+    value2 = value2.toLocaleString("pt-BR", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    })
+    inputValue2.value = value2
+    })
 })
 
 function convert() {
@@ -26,7 +87,7 @@ function convert() {
     // troca virgula por ponto
     value1 = value1.replace(',', '.')
     //converte de string para numero
-    value1 = Number(value1)       
+    value1 = Number(value1)
 
     // seleciona o segundo input
     let inputValue2 = document.getElementById('value2')
@@ -34,21 +95,54 @@ function convert() {
     // seleciona as moedas escolhidas
     let currency1 = document.getElementById('currency1').value
     let currency2 = document.getElementById('currency2').value
-    
-    if (currency1 == 'Real' && currency2 == 'Dolar') {
-        value2 = value1 / 5.24
 
-        //formata o valor
-        value2 = value2.toLocaleString("pt-BR", { minimumFractionDigits: 2, 
-        maximumFractionDigits: 2 })        
-        inputValue2.value = value2
+    if (currency1 == '' || currency2 == '') {
+        alert('Selecione as moedas')
+
+    } else if (currency1 == currency2) {
+        alert('Selecione moedas diferentes')
+
+    } else if (currency1 == 'Real' && currency2 == 'Dolar') {
+        value2 = value1 / 5.24
 
     } else if (currency1 == 'Dolar' && currency2 == 'Real') {
         value2 = value1 * 5.24
-        
-        value2 = value2.toLocaleString("pt-BR", { minimumFractionDigits: 2, 
-        maximumFractionDigits: 2 })        
-        inputValue2.value = value2
+
+    } else if (currency1 == 'Real' && currency2 == 'Euro') {
+        value2 = value1 / 5.74
+
+    } else if (currency1 == 'Euro' && currency2 == 'Real') {
+        value2 = value1 * 5.74
+
+    } else if (currency1 == 'Real' && currency2 == 'BTC') {
+        value2 = value1 / 149905.69
+
+    } else if (currency1 == 'BTC' && currency2 == 'Real') {
+        value2 = value1 * 149905.69
+
+    } else if (currency1 == 'Euro' && currency2 == 'Dolar') {
+        value2 = value1 * 1.08
+
+    } else if (currency1 == 'Dolar' && currency2 == 'Euro') {
+        value2 = value1 / 1.08
+
+    } else if (currency1 == 'Dolar' && currency2 == 'BTC') {
+        value2 = value1 / 28436,50
+
+    } else if (currency1 == 'BTC' && currency2 == 'Dolar') {
+        value2 = value1 * 28436,50
+
+    } else if (currency1 == 'Euro' && currency2 == 'BTC') {
+        value2 = value1 / 26213,70
+
+    } else if (currency1 == 'BTC' && currency2 == 'Euro') {
+        value2 = value1 * 26213,70
     }
+
+    value2 = value2.toLocaleString("pt-BR", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    })
+    inputValue2.value = value2
 
 }
