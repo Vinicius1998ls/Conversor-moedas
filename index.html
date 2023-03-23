@@ -9,11 +9,14 @@
     <title>Conversor de moedas</title>
 </head>
 <body>
+
     <h1>Conversor de moedas</h1>
+
     <form>
+        
         <div>
-            <input type="number">
-            <select name="" id="">
+            <input type="text" inputmode="numeric" pattern="[0-9]*" id="value1">
+            <select name="" id="currency1">
                 <option value="">Selecione</option>
                 <option value="Real">Real</option>
                 <option value="Dolar">Dolar</option>
@@ -21,9 +24,10 @@
                 <option value="BTC">BTC</option>
             </select>
         </div>
+
         <div>
-            <input type="number">
-            <select name="" id="">
+            <input type="text" id="value2">
+            <select name="" id="currency2">
                 <option value="">Selecione</option>
                 <option value="Real">Real</option>
                 <option value="Dolar">Dolar</option>
@@ -31,7 +35,9 @@
                 <option value="BTC">BTC</option>
             </select>
         </div>
-        <button value="Converter">Converter</button>
+
+        <button value="Converter" id="button" onclick="convert()">Converter</button>
+
     </form>
 </body>
 </html>
