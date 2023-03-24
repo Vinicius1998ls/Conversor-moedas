@@ -59,6 +59,7 @@ button {
     font-family: 'Noto Sans SC', sans-serif;
     font-weight: 700;
     font-size: 1rem; 
-    background-color: #7AF500;
+    background-color: #393e41;
+    color: #d3d0cb;
     border: 2px solid #000000;   
 }
